@@ -1,22 +1,11 @@
-import { Header } from "@repo/ui/header";
+import fetchToCurl from "@repo/fetch-to-curl";
+
 import "./style.css";
-import typescriptLogo from "/typescript.svg";
-import { Counter } from "@repo/ui/counter";
-import { setupCounter } from "@repo/ui/setup-counter";
 
-document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    ${Header({ title: "Docs" })}
-    <div class="card">
-      ${Counter()}
-    </div>
-  </div>
-`;
-
-setupCounter(document.querySelector<HTMLButtonElement>("#counter")!);
+document
+  .querySelector<HTMLButtonElement>("#convert")!
+  .addEventListener("click", () => {
+    document.querySelector<HTMLDivElement>("#output")!.innerText = fetchToCurl(
+      document.querySelector<HTMLTextAreaElement>("#request")!.value
+    );
+  });

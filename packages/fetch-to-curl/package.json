@@ -1,11 +1,7 @@
 {
-  "name": "@repo/ui",
+  "name": "@repo/fetch-to-curl",
   "version": "0.0.0",
-  "exports": {
-    "./counter": "./components/counter.ts",
-    "./header": "./components/header.ts",
-    "./setup-counter": "./utils/counter.ts"
-  },
+  "main": "index.ts",
   "license": "MIT",
   "scripts": {
     "lint": "eslint \"**/*.ts\""
@@ -15,5 +11,8 @@
     "@repo/typescript-config": "*",
     "eslint": "^8.57.0",
     "typescript": "5.5.4"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

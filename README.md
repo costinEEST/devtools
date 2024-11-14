@@ -1,8 +1,8 @@
-# CLI 
+# CLI
 
-- `npx create-turbo@latest -e with-vite`
-  
-```bash
+- [`npx create-turbo@latest -e with-vite`](https://github.com/vercel/turborepo/tree/main/examples/with-vite)
+
+```sh
 ? Where would you like to create your Turborepo? .
 ? Which package manager do you want to use? npm
 
@@ -29,6 +29,8 @@ To get started:
 - Run a command twice to hit cache
 ```
 
-# Docs 
+- Run `docs` app in [dev](https://turbo.build/repo/docs/crafting-your-repository/running-tasks#filtering-by-package-name) mode `npx turbo dev --filter=docs`
+
+# Docs
 
 - Initial Turbo's [`README`](initial-readme.md) file.

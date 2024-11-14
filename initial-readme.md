@@ -17,8 +17,7 @@ This Turborepo includes the following packages and apps:
 ### Apps and Packages
 
 - `docs`: a vanilla [vite](https://vitejs.dev) ts app
-- `web`: another vanilla [vite](https://vitejs.dev) ts app
-- `@repo/ui`: a stub component & utility library shared by both `web` and `docs` applications
+- `@repo/fetch-to-curl`: a utility library shared by `docs` application
 - `@repo/eslint-config`: shared `eslint` configurations
 - `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
 

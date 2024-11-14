@@ -10,7 +10,7 @@
     "lint": "eslint \"src/**/*.ts\""
   },
   "dependencies": {
-    "@repo/ui": "*"
+    "@repo/fetch-to-curl": "*"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
