@@ -1,33 +1,34 @@
-# `Turborepo` Vite starter
+# CLI 
 
-This is an official starter Turborepo.
+- `npx create-turbo@latest -e with-vite`
+  
+```bash
+? Where would you like to create your Turborepo? .
+? Which package manager do you want to use? npm
 
-## Using this example
+>>> Creating a new Turborepo with:
 
-Run the following command:
+Application packages
+ - apps/docs
+ - apps/web
+Library packages
+ - packages/eslint-config
+ - packages/typescript-config
+ - packages/ui
 
-```sh
-npx create-turbo@latest -e with-vite
+>>> Success! Your new Turborepo is ready.
+
+To get started:
+- Enable Remote Caching (recommended): npx turbo login
+   - Learn more: https://turbo.build/repo/remote-cache
+
+- Run commands with Turborepo:
+   - npm run build: Build all apps and packages
+   - npm run dev: Develop all apps and packages
+   - npm run lint: Lint all apps and packages
+- Run a command twice to hit cache
 ```
 
-## What's inside?
+# Docs 
 
-This Turborepo includes the following packages and apps:
-
-### Apps and Packages
-
-- `docs`: a vanilla [vite](https://vitejs.dev) ts app
-- `web`: another vanilla [vite](https://vitejs.dev) ts app
-- `@repo/ui`: a stub component & utility library shared by both `web` and `docs` applications
-- `@repo/eslint-config`: shared `eslint` configurations
-- `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
-
-Each package and app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Utilities
-
-This Turborepo has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- Initial Turbo's [`README`](initial-readme.md) file.
