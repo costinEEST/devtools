@@ -5,7 +5,7 @@ type FetchOptions = {
 };
 
 export default function fetchToCurl(fetchString: string): string {
-  const pattern = /fetch\(\s*["']([^"']+)["']\s*,\s*(\{[\s\S]*\})\s*\)/;
+  const pattern = /fetch\(\s*["']([^"']+)["']\s*(?:,\s*(\{[\s\S]*\}))?\s*\)/;
   const match = fetchString.trim().match(pattern);
 
   if (!match) {
@@ -15,10 +15,10 @@ export default function fetchToCurl(fetchString: string): string {
   const url = match[1];
   let options: FetchOptions = {};
 
-  // Only attempt to parse options if it exists
-  if (match[2].trim()) {
+  if (match[2]) {
     try {
       const sanitizedOptions = match[2]
+        .trim()
         .replace(/(\w+):/g, '"$1":') // Add quotes around property names
         .replace(/'/g, '"'); // Convert single quotes to double quotes
       options = JSON.parse(sanitizedOptions);
@@ -29,16 +29,12 @@ export default function fetchToCurl(fetchString: string): string {
 
   const method = (options.method || "GET").toUpperCase();
   const headers = options.headers || {};
-  let body = options.body;
-
-  // Initialize the curl command with the HTTP method and URL
   let curlCommand = `curl -X ${method} "${url}"`;
-
-  // Add headers to the curl command
   for (const [key, value] of Object.entries(headers)) {
     curlCommand += ` -H "${key}: ${value}"`;
   }
 
+  let body = options.body;
   if (body) {
     if (typeof body === "object") {
       body = JSON.stringify(body);
